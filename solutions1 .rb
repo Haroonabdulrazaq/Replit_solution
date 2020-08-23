@@ -50,3 +50,6 @@ class Node
   puts list.get(0)
   puts list.get(2)
   # => 5
+
+  #Solution 1.2 
+  #Implement Add_at and Remove Method
