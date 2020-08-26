@@ -163,3 +163,7 @@ class Node
    puts list.get(1)
    puts list.get(2)
   # puts list.get(3)
+
+
+
+  #Solution to 
