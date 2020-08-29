@@ -26,3 +26,15 @@ def strangeCounter(t)
     p "Init_value #{init_value}"
   end
   strangeCounter(10)
+
+  #Not my code and I dont understand what is going on
+def strangeCounter(t)
+    n=3
+    while 2*n-2 <= t
+        n*=2
+      result = n-(t-(n-2))  
+    end
+    puts result
+end
+
+ strangeCounter(-1)
