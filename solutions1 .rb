@@ -233,3 +233,21 @@ class Node
     @next_node = next_node
   end
 end
+
+class Queue
+  def initialize
+    @head = nil
+    @tail = nil  
+  end
+
+  def add(number)
+    new_node = Node.new(number)
+    if @head.nil?
+      @head = new_node
+      @tail = new_node
+    else
+      @tail.next_node = new_node
+      @tail = @tail.next_node
+    end
+  end
+end
