@@ -222,5 +222,14 @@ puts stack.pop
 # => 3
 
 
-
-#Working on Queue
+# Solution 1.3 
+# Working on Queue
+# Start with your code from LinkedList challenge.
+class Node
+  attr_accessor :value, :next_node
+  
+  def initialize(value, next_node = nil)
+	  @value = value
+    @next_node = next_node
+  end
+end
