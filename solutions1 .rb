@@ -250,4 +250,13 @@ class Queue
       @tail = @tail.next_node
     end
   end
+  def remove
+    if @head.nil?
+      return -1
+    else
+      former_head = @head
+      @head =  @head.next_node 
+      former_head.value
+    end
+  end
 end
