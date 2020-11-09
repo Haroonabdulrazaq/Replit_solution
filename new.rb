@@ -41,7 +41,7 @@ class Stack
 
   def min
     current = @head
-    @min = @head # Setting back @min to head
+    @min = @head
     until current.next_node.nil?
       current = current.next_node
       @min = current if @min.value > current.value
