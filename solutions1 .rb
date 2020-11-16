@@ -391,3 +391,14 @@ puts balanced_brackets?('(')
 
 puts balanced_brackets?('[({}{}{})([])]')
 # => true
+
+def sliding_maximum(k, array)
+  result =[]
+  (array.length - (k-1)).times do |i| # The number of times it would loop
+    newArr = array[i...(k+i)] # increement front and back with i 
+    result.push(newArr.max)  # push into a new array and return that array
+  end
+ return result
+end
+
+sliding_maximum(3, [1, 3, 5, 7, 9, 2])
