@@ -354,14 +354,14 @@ stack.pop
 puts stack.min
 
 def balanced_brackets?(string)
-  str = string.gsub(/\w/, "")
-  strArr = str.split('')
+  str = string.gsub(/\w/, "")  # Global subtitution gsub
+  strArr = str.split('')       # remove letters so we can concentrate on brackets
 
- return false if strArr.length.odd?
+ return false if strArr.length.odd?  # check index if brackets are complete return false if not
 
- return false if strArr[0] == ')' || strArr[0] == '}' || strArr[0] == ']'
+ return false if strArr[0] == ')' || strArr[0] == '}' || strArr[0] == ']' # checking if the first bracket is an opening
 
- strArr.length.times do |i|
+ strArr.length.times do |i|  # Checking if the next bracket is followed by a wrong closed bracket Switch case in ruby
   case strArr[i]
     when '('
       if strArr[i + 1] == '}' || strArr[i + 1] == ']'
