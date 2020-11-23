@@ -431,3 +431,24 @@ def transpose(string)
   
     puts transpose('gngngnnggnngggnnn')
   #=> nnnnnnnnngggggggg
+
+
+  # Transposition Challenge Replit Solution
+
+  def transpose(string)  # <====This solution was not done my me, this is replit solution
+    # your code here
+    while string.include?('gn')
+      string.gsub('gn', 'ng')
+    end
+    
+    string
+  end
+  
+  puts transpose('he was searchign on Bign for signign kigns')
+  # => he was searching on Bing for singing kings
+  
+  puts transpose('rignadingdiggn!')
+  # => ringadingdingg!
+  
+  puts transpose('gngngnnggnngggnnn')
+  # => nnnnnnnnngggggggg
