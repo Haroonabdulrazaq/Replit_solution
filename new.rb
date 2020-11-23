@@ -1,12 +1,40 @@
-def sliding_maximum(k, array)
-  result =[]
-  (array.length - (k-1)).times do |i| 
-    newArr = array[i...(k+i)]
-    result.push(newArr.max)
+def transpose(string)
+str = string.split('')
+newArr =[]
+resultArr = []
+str.length.times do |i| 
+  if str[i] == 'g'
+    newArr.push(str[i])
+  elsif str[i] == 'n'
+    newArr.unshift(str[i])
+  else
+    resultArr.push(newArr) 
+    newArr=[]
+    resultArr.push(str[i])
   end
- return result
+end
+resultArr.push(newArr).join('')
 end
 
-# puts sliding_maximum(3, [1, 3, 5, 7, 9, 2])
-# => [5, 7, 9, 9]
-puts sliding_maximum(4, [9, 3, 5, 1, 7, 10])
+    puts transpose('he was searchign on Bign for signign kigns')
+# # => he was searching on Bing for singing kings
+
+   puts transpose('rignadingdiggn!')
+# => ringadingdingg!
+
+  puts transpose('gngngnnggnngggnnn')
+#=> nnnnnnnnngggggggg
+
+# newArr = []
+# str.length.times do |i|
+#   if str[i] == 'g'
+#     newArr.push(str[i]) 
+#   elsif str[i] == 'n'
+#     newArr.unshift(str[i])
+#   else
+#     newArr.push(str[i])
+#   end
+#  end
+
+ 
+#  puts newArr.join()

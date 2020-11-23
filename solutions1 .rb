@@ -355,11 +355,11 @@ puts stack.min
 
 def balanced_brackets?(string)
   str = string.gsub(/\w/, "")  # Global subtitution gsub
-  strArr = str.split('')       # remove letters so we can concentrate on brackets
+  strArr = str.split('')       # removed letters so we can concentrate on brackets
 
  return false if strArr.length.odd?  # check index if brackets are complete return false if not
 
- return false if strArr[0] == ')' || strArr[0] == '}' || strArr[0] == ']' # checking if the first bracket is an opening
+ return false if strArr[0] == ')' || strArr[0] == '}' || strArr[0] == ']' # checking if the first bracket is a closing
 
  strArr.length.times do |i|  # Checking if the next bracket is followed by a wrong closed bracket Switch case in ruby
   case strArr[i]
@@ -395,7 +395,7 @@ puts balanced_brackets?('[({}{}{})([])]')
 def sliding_maximum(k, array)
   result =[]
   (array.length - (k-1)).times do |i| # The number of times it would loop
-    newArr = array[i...(k+i)] # increement front and back with i 
+    newArr = array[i...(k+i)] # increament front and back with i 
     result.push(newArr.max)  # push into a new array and return that array
   end
  return result
