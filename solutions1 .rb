@@ -402,3 +402,32 @@ def sliding_maximum(k, array)
 end
 
 sliding_maximum(3, [1, 3, 5, 7, 9, 2])
+
+
+# Transposition Chanllenge
+def transpose(string)
+  str = string.split('')
+  newArr =[]
+  resultArr = []
+  str.length.times do |i| 
+    if str[i] == 'g'
+      newArr.push(str[i])
+    elsif str[i] == 'n'
+      newArr.unshift(str[i])
+    else
+      resultArr.push(newArr) 
+      newArr=[] # Empty out newArr so n mand g don't keep coming
+      resultArr.push(str[i])
+    end
+  end
+  resultArr.push(newArr).join('') # Pushing incase there is no other element in the str apart from n and g
+  end
+  
+      puts transpose('he was searchign on Bign for signign kigns')
+  # # => he was searching on Bing for singing kings
+  
+     puts transpose('rignadingdiggn!')
+  # => ringadingdingg!
+  
+    puts transpose('gngngnnggnngggnnn')
+  #=> nnnnnnnnngggggggg
