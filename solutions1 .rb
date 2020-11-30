@@ -452,3 +452,22 @@ def transpose(string)
   
   puts transpose('gngngnnggnngggnnn')
   # => nnnnnnnnngggggggg
+
+  def sqrt(number)
+    sqrt_recursive(number, 0, number)
+  end
+  
+  def sqrt_recursive(number, min_interval, max_interval)
+    numArr =[]
+  number.times do |n|
+    numArr.push(n+1)
+  end
+  numArr.each do |num|
+    if (num*num) == number
+      return num
+    end
+  end
+  end
+  
+  puts sqrt(25)
+  puts sqrt(7056)
