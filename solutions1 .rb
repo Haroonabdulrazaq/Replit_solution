@@ -453,6 +453,7 @@ def transpose(string)
   puts transpose('gngngnnggnngggnnn')
   # => nnnnnnnnngggggggg
 
+  # Solving binarySeach with loop 
   def sqrt(number)
     sqrt_recursive(number, 0, number)
   end
@@ -471,3 +472,38 @@ def transpose(string)
   
   puts sqrt(25)
   puts sqrt(7056)
+
+  def sqrt(number)
+    sqrt_recursive(number, 0, number)
+  end
+  
+  # Solving Binary search with Recursion
+  def sqrt_recursive(number, min_interval, max_interval)
+    numberArr = (1..number).to_a
+    midpoint = (min_interval + max_interval)/2 # Find the midpoint
+    mid = numberArr[midpoint] ** 2  # Getting midpoint to the power of 2
+    if mid == number  # Checking if the number is found
+      return numberArr[midpoint] # return the number in the array if (found) condition is true 
+    elsif mid > number  
+      return sqrt_recursive(number, min_interval, midpoint -1 ) # Adjust the end point if the mid is greater
+    elsif mid < number
+      return sqrt_recursive(number, midpoint + 1, max_interval)  # Adjust the start point if the mid is less
+    else
+    "Number does not exist in the Array" # If min_interval (index) is greater than max_interval(index) then the target is not found 
+                                           # <= Its not a mistake that the condition to check if it found or not
+    end
+  end
+  puts sqrt(25)
+  puts sqrt(7056)
+  # sqrt_recursive(25, 0,25)
+  # end
+  # Get an Array using range (0...number).to_a
+  # Set min_interval and max_interval as Start and End res
+  # Set midpoint as (Start + End)/2
+  # If midpoint*midpoint equals number return midpoint
+  # else if midpoint*midpoint is greater than number
+    # then Shift End to midpoint[index - 1]
+    # then get midpoint again
+  # else if midpoint*midpoint is less than number
+    # then Shift Start to midpoint[index + 1]
+    # then get midpoint again
