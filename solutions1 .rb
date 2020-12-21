@@ -581,6 +581,9 @@ def transpose(string)
     
     
       exact_sum?(k - coins[0], coins[1,coins.length]) || exact_sum?(k, coins[1, coins.length])
+      # Exclude the first element from the coins array till k==0
+      # Then backtrack after the OR || symbol include the first element
+      # Do this until either of the conditions are met
     end
     
     puts exact_sum?(12, [1, 2, 3, 4, 5])
