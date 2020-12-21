@@ -539,4 +539,6 @@ def transpose(string)
     
     puts move(2, 3)
     # => 2->1 2->3 1->3
+
+    # Tower of Hanio Part 2 for 3 and more dics problem
     
