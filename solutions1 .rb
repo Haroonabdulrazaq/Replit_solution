@@ -541,4 +541,36 @@ def transpose(string)
     # => 2->1 2->3 1->3
 
     # Tower of Hanio Part 2 for 3 and more dics problem
+    def hanoi_steps(number_of_discs)
+      move_disk(number_of_discs, 1, 2, 3)
+    end
+    
+    def move_disk(number_of_discs, start, intermediate, goal)
+      if number_of_discs == 1
+        puts "#{start}->#{goal}"
+        return
+      end
+    
+      move_disk(number_of_discs - 1, start, goal, intermediate)
+      puts "#{start}->#{goal}"
+    
+      move_disk(number_of_discs - 1, intermediate, start, goal)
+    
+    end
+    
+    puts "Two steps"
+    puts hanoi_steps(2)
+    # => 1->2 
+    #    1->3 
+    #    2->3
+    
+    #puts hanoi_steps(3)
+    # 1->3 start-> goal
+    # 1->2 start-> intermediate
+    # 3->2 goal-> intermediate
+    # 1->3 start-> goal
+    # 2->1 intermediate-> start
+    # 2->3 intermediate-> goal
+    # 1->3 start-> goal
+    
     
