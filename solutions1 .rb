@@ -664,3 +664,19 @@ tree = array_to_tree([10, 1, 2, 3, 4, 5, 6], 0)
 puts post_order(tree)
 # =>10 1 3 4 2 5 6 pre_order
 #=> 3 4 1 5 6 2 10 post_order
+
+# How tall is the Tree
+def binary_tree_height(array_tree)
+  sum = 0
+  height = 0
+  i = 0
+  array_tree.length.times do |i|
+    if sum >= array_tree.length # Checking if the sum is in range of the next level of the tree
+      return height  # return count 
+    end
+      sum += (2**i) # Formular for calculating hieght 2^i
+      height += 1  # Incrementing i
+  end
+end
+
+puts binary_tree_height([2, 4, 8, 0, 9, 6, 9])
