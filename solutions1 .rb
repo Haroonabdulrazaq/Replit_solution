@@ -771,7 +771,7 @@ puts binary_search_tree([8, 3, 10, 1, 6, 14, 4, 7, 13])
 # => "8 3 1 6 4 7 10 14 13"
 
 # Is it a search Tree
-
+# Copied Solution from Model I dont Unserstand a thing of what is going on
 class Node
 	attr_reader :data
 	attr_accessor :left, :right
